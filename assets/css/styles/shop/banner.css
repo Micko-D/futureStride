@@ -1,0 +1,22 @@
+.banner{
+    width: 100vw;
+    height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--charcoal-color) !important;
+    background-image: url('/assets/images/shop-background.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.banner h1{
+    font-size: 62px;
+    margin-bottom: 180px;
+    color: var(--light-mint-color);
+}
+
+.banner span{
+    color: var(--white-color);
+}

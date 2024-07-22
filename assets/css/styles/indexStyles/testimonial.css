@@ -1,0 +1,95 @@
+.testimonials {
+    width: 1200px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: .5;
+    color: var(--white-color);
+    background-image: url('/assets/images/testimonial-background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.549);
+    background-blend-mode: overlay;
+}
+
+.testimonials h1 {
+    color: var(--light-mint-color);
+}
+
+.user-profile {
+    width: 1200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.user-profile .carousel-wrapper {
+    width: 80%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials .testimonial-carousel {
+    display: flex;
+    width: calc(200%);
+    /* Adjusted to accommodate clones */
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonials .user-carousel-item {
+    flex: 0 0 20%;
+    /* Each item takes 20% width */
+    box-sizing: border-box;
+    padding: 10px;
+    transition: transform 0.5s ease;
+}
+
+.testimonials .user-carousel-item img {
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.testimonials .user-loader {
+    width: 250px;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.testimonials .user-loader.hidden {
+    opacity: 0;
+}
+
+.testimonials .user-carousel-item.active {
+    transform: scale(1.3);
+}
+
+.testimonials .message {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+
+.testimonials .message .message-item {
+    max-width: 500px;
+    position: absolute;
+    line-height: 1.5;
+    letter-spacing: .1rem;
+    opacity: 0;
+    z-index: -1;
+    transition: ease-in-out .3s;
+}
+
+.testimonials .message .message-item.active {
+    opacity: 1;
+    z-index: 0;
+}

@@ -1,0 +1,118 @@
+.banner {
+    width: 1200px;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    justify-content: space-between;
+    background-image: url("/assets/images/index-background.jpeg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0000005d;
+    background-blend-mode: multiply;
+}
+
+.banner .title {
+    width: 30%;
+    position: relative;
+    padding-left: 20px;
+}
+
+.banner .title h1 {
+    font-size: 42px;
+    width: 120%;
+    letter-spacing: .3rem;
+    margin-bottom: 30px;
+    color: var(--light-mint-color);
+}
+
+.banner .title .button {
+    padding: 10px 30px;
+    text-decoration: none;
+    color: var(--charcoal-color);
+    background-color: var(--blue-mint-color);
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.banner .title .swatches {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    margin-top: 120px;
+}
+
+.banner .title .swatches .swatche {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.banner .title .swatches .azure-green {
+    background-color: #9CB2B0;
+}
+
+.banner .title .swatches .flamingo-red {
+    background-color: #EB9187;
+}
+
+.banner .title .swatches .blue-anthracite {
+    background-color: #545E64;
+}
+
+.banner .title .swatches .swatche.active {
+    width: 70px;
+    height: 70px;
+}
+
+.banner .banner-shoes {
+    width: 45%;
+}
+
+.banner .banner-shoes img {
+    position: absolute;
+    width: 700px;
+    top: 0;
+    transform: translateX(-100px) translateY(-20px) rotate(10deg);
+    filter: drop-shadow(0px 10px 10px #69C5C9);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.banner .banner-shoes img.active {
+    opacity: 1;
+    transform: translateX(-100px) translateY(-20px) rotate(10deg);
+    animation: animateShoe 1s ease-in-out;
+}
+
+@keyframes animateShoe {
+    0% {
+        transform: translateX(-100px) translateY(-20) rotate(10deg);
+    }
+
+    50% {
+        transform: translateX(-100px) translateY(-40px) rotate(20deg);
+    }
+
+    100% {
+        transform: translateX(-100px) translateY(-20px) rotate(10deg);
+    }
+}
+
+.banner .welcome-msg {
+    width: 20%;
+    padding-right: 20px;
+}
+
+.banner .welcome-msg p {
+    text-align: right;
+    color: var(--white-color);
+    text-shadow: 0px 4px 4px #000000b6;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,419 @@
+.product-container {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.filter-container {
+    grid-area: 1 / 1 / 3 / 2;
+    display: flex;
+    justify-content: first baseline;
+    flex-direction: column;
+    gap: 40px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.filter-container::before {
+    content: '';
+    width: 2px;
+    height: 400px;
+    position: absolute;
+    top: 30px;
+    right: 2px;
+    background: var(--light-charcoal-color);
+}
+
+.shop-search-bar {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #efefefac;
+    border: 0px;
+    color: var(---white-color);
+}
+
+
+.shop-search-bar::placeholder {
+    color: var(--white-color);
+}
+
+.shop-search-bar:focus {
+    outline: none;
+    /* Removes the default outline */
+    border: none;
+    /* Removes the border */
+    color: var(--white-color);
+}
+
+.filter-container .filter-category .title,
+.filter-prod .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    line-height: .1;
+    color: var(--white-color);
+}
+
+.filter-container .filter-category .title img,
+.filter-prod .title img {
+    width: 25px;
+    height: 25px;
+}
+
+.filter-category .men,
+.filter-category .women {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-category .men p,
+.filter-category .women p,
+.filter-prod p {
+    font-size: 22px;
+    color: var(--white-color);
+    margin: 0px;
+}
+
+.filter-category .men input {
+    padding: 10px;
+}
+
+/* The container */
+.filter-category .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.filter-category .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.filter-category .checkmark {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.filter-category .container:hover input~.checkmark {
+    background-color: var(--light-charcoal-color);
+    border: 1px solid var(--white-color);
+}
+
+/* When the checkbox is checked, add a blue background */
+.filter-category .container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.filter-category .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.filter-category .container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.filter-category .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.range-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 6px;
+    background: #cccccc98;
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: var(--blue-mint-color);
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.range-input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: var(--blue-mint-color);
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 10px #69c4c941
+}
+
+.range-input:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px #69c4c941
+}
+
+.range-input:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px #69c4c941
+}
+
+.range-input::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px #69c4c941
+}
+
+.range-input:active::-moz-range-thumb {
+    box-shadow: 0 0 0 13px #69c4c941
+}
+
+.range-input:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 13px #69c4c941
+}
+
+.filter-prod .price-range {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.filter-prod .sort,
+.filter-prod .color-filter {
+    margin-top: 10px;
+}
+
+.filter-prod .sort .sort-icon {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.filter-prod .sort .sort-icon.scaled {
+    transform: scale(1.2);
+}
+
+.filter-prod .color-filter {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filter-prod .color-filter .color-choice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-prod .color-filter .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.filter-prod .color-filter .color p{
+    font-size: 14px;
+    border-radius: 50px;
+    border: 1px solid var(--white-color);
+}
+
+.filter-prod .color-filter .color.selected {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.product-container .card{
+    padding: 20px;
+}
+
+.product-container .card .prod-holder{
+    height: 160px;
+    transform: translateX(20px) translateY(-25px);
+    position: absolute;
+}
+
+.card .prod-holder img{
+    width: 180px;
+    transition: ease-in .3s;
+}
+
+.card:hover .prod-holder img{
+    transform: rotate(20deg);
+}
+
+.product-container .card .prod-details{
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: var(--light-charcoal-color);
+}
+
+.card .upper-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+    z-index: 1;
+}
+
+.card .upper-section .cart-item-count{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-17px) translateY(-15px);
+    border-radius: 50px;
+    background-color: var(--white-color);
+    cursor: default;
+}
+
+.card .upper-section .prod-discount p{
+    width: fit-content;
+    padding: 2px 20px;
+    background-color: #F15E4A;
+    border-radius: 20px;
+    color: var(--white-color);
+    cursor: default;
+}
+
+.card .lower-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.card .lower-section .prod-name-price{
+    width: 125px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.card .lower-section .prod-name-price p{
+    font-size: 18px;
+    color: var(--white-color);
+    margin: 0px;
+    line-height: 1.2rem;
+}
+
+.card .trancute{
+    max-width: 125px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card .add-remove-button{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.card .add-remove-button .add, 
+.card .add-remove-button .remove{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue-mint-color);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.product-container .card .order-now-btn{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--blue-mint-color);
+}
+
+.card .order-now-btn p{
+    color: var(--white-color);
+    font-size: 22px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination a {
+    color: var(--charcoal-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: var(--white-color);
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: var(--blue-mint-color);
+    color: white;
+}
+
+.pagination .active {
+    background-color: var(--blue-mint-color);
+    color: var(--charcoal-color);
+}
+
+p {
+    font-size: 14px;
+}
+
+#page-numbers {
+    margin-top: 20px;
+    font-size: 16px;
+}

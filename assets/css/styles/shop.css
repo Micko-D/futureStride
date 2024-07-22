@@ -1,0 +1,9 @@
+@import "/assets/css/styles/shop/header.css";
+@import "/assets/css/styles/shop/banner.css";
+@import "/assets/css/styles/shop/products.css";
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

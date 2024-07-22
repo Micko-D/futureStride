@@ -1,0 +1,103 @@
+.navigation-menu {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+.logo,
+.profile-menu {
+    width: fit-content;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.navigation-menu .logo img {
+    width: 180px;
+}
+
+.navigation-menu .profile-menu .profile {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.navigation-menu .profile-menu .profile img,
+.navigation-menu .profile-menu .profile .cart-icon {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.profile-menu .menu-icon {
+    position: absolute;
+    background-color: var(--light-charcoal-color);
+    transform: translateX(125px) translateY(20px);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--white-color);
+    opacity: 0;
+    transition: ease-in-out .3s;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.profile-menu .menu-icon.active{
+    transform: translateX(65px) translateY(20px);
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.profile-menu .menu-label {
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    transform: translateX(-20px) translateY(20px);
+}
+
+.profile-menu .menu-label ul li p {
+    width: 66px;
+    position: relative;
+    margin: 0px;
+    color: var(--white-color);
+    cursor: default;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: ease-in-out .3s;
+}
+
+.profile-menu .menu-label ul li p.active{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+
+.navigation-menu .profile-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transform: translateX(-20px);
+}
+
+.navigation-menu .profile-menu ul li {
+    list-style: none;
+}
+
+.navigation-menu .profile-menu ul li a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 400;
+}
+
+.navigation-menu .profile-menu ul li .fa-solid:hover {
+    color: var(--white-color) !important;
+}

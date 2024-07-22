@@ -1,0 +1,13 @@
+@import "indexStyles/header.css";
+@import "indexStyles/banner.css";
+@import "indexStyles/top-pick.css";
+@import "indexStyles/showcase-prod.css";
+@import "indexStyles/our-collection.css";
+@import "indexStyles/testimonial.css";
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--charcoal-color) !important; 
+}

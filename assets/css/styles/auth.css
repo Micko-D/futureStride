@@ -1,0 +1,170 @@
+body {
+    overflow: hidden;
+    background-image: url("/assets/images/auth-background.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+}
+
+.login,
+.signup {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login h2,
+.signup h2 {
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.login h2 {
+    color: aqua;
+    text-shadow: 0px 4px 4px #000;
+}
+
+.signup h2 {
+    color: var(--white-color);
+    text-shadow: 0px 4px 4px #000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup .input-field {
+    color: #ededed;
+}
+
+.input-container {
+    position: relative;
+    padding: 15px 0 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.input-field {
+    background-color: transparent;
+    border: 0px;
+    /* outline: none; */
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #efefefa7;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown~.form-label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+    }
+}
+
+.input-field:focus {
+    background-color: transparent;
+}
+
+.signup .input-field {
+    border-bottom: 1px solid #efefefc6;
+}
+
+
+.form-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #efefefb5;
+    z-index: -1;
+    transform: translateY(-3px);
+}
+
+.signup .form-label {
+    color: #efefefe7;
+}
+
+.input-field:focus {
+    ~.form-label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+    }
+}
+
+.input-field {
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+#toggle-login-password,
+#toggle-confirm-password {
+    position: absolute;
+    right: 0;
+    top: 22px;
+    z-index: 99;
+}
+
+.forgot-password {
+    margin: 0px;
+    margin-top: 10px;
+    color: #EFEFEF;
+    cursor: pointer;
+}
+
+#password-requirements {
+    margin-top: 10px;
+}
+
+.requirement {
+    color: #EFEFEF;
+    text-shadow: 0px 4px 4px #5f5f5f;
+}
+
+.valid {
+    color: rgb(0, 116, 0);
+}
+
+.login button,
+.signup button {
+    color: var(--white-color);
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    width: 80%;
+    align-self: center;
+    font-weight: 700;
+    letter-spacing: .5;
+    margin-top: 10px;
+    text-shadow: 0px 0px 4px #000;
+}
+
+.login button {
+    background-color: #93D1CC;
+    box-shadow: 0px 4px 10px var(--charcoal-color);
+}
+
+.signup button {
+    background-color: var(--charcoal-color);
+    box-shadow: 0px 4px 10px var(--charcoal-color);
+}
